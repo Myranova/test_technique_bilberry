@@ -1,0 +1,13 @@
+{% extends "main_app/base.html" %}
+
+{% block title %} View all picture in databases {% endblock %}
+
+<h1> View all picture with their flags </h1>
+{% block content%}
+  {% for photo in photos %}
+    <h3> {{ photo.nom }}  </h3>
+    <img src="{{photo.photo.url}}"/>
+    <p> rejected flag : {{ photo.rejected_flag}}</p>
+    <p> verified flag : {{ photo.verified_flag}}</p>
+  {% endfor %}
+{% endblock %}

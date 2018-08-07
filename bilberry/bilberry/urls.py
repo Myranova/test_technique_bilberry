@@ -1,3 +1,9 @@
+from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from django.conf.urls import url
+from main_app import views
+
 """bilberry URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -18,4 +24,11 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(r'', views.home),
+    path('contact_photo', views.contact_photo, name="contact_photo"),
+    path('viewer/<id_photo>/<choice_flag>', views.image_viewer, name="viewer"),
+    path('list', views.image_list, name="list"),
 ]
+
+if settings.DEBUG is True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

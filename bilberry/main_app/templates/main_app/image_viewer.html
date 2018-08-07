@@ -1,0 +1,27 @@
+{% extends "main_app/base.html" %}
+
+{% block title %} Accept or Reject new Picture {% endblock %}
+
+{% block content %}
+  <p>View pictures</p>  
+    <img src="{{photo.photo.url}}"/>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    document.addEventListener('keydown', function(event) {
+      var key_code = event.keyCode;
+
+      if (key_code === 88) {
+          alert('X is pressed');
+            window.location.href = '/viewer/{{id_next}}/0';
+          /* method post */
+      } 
+      else if (key_code == 80) {
+          alert('P is pressed');
+             window.location.href = '/viewer/{{id_next}}/1';
+          /* method post */
+      }
+    });
+  </script>
+{% endblock %}

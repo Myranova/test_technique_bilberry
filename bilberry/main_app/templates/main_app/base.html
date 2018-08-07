@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/media/css/style.css"/>
+        <title> {% block title %} Biberry Homepage {% endblock %}</title>
+    </head>
+    <body>
+        <header> Bilberry Header </header>
+            <h1> Welcome to Bilbery technical test ! </h1>
+            <nav>
+                {% block nav %}
+                    <ul>
+                        <li><a href="/"> Home </a></li>
+                        <li><a href="/viewer/1/50"> Image Viewer </a></li>
+                        <li><a href="/contact_photo"> Image Upload</a></li>
+                        <li><a href="/list"> Image List </a></li>
+                    </ul>
+                {% endblock %}
+            </nav>
+            <section id="content">
+                {% block content %} {% endblock %}
+            </section>
+            <footer></footer>
+           {% block scripts %} {% endblock %}
+    </body>
+
+</html>
+

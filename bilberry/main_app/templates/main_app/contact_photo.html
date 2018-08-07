@@ -1,0 +1,20 @@
+{% extends "main_app/base.html" %}
+
+{% block title %} Upload a picture {% endblock %}
+
+{% block content%}
+    <h1>Add a new picture</h1>
+
+    {% if sauvegarde %}
+        <p>Cette photo a bien été enregistré.</p>
+    {% endif %}
+
+    <p>
+        <form action="{% url "contact_photo" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit"/>
+        </form>
+    </p>
+
+{% endblock %}
