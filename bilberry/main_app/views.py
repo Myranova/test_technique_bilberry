@@ -20,6 +20,8 @@ def contact_photo(request):
         contact.verified_flag = False
         contact.save()
         sauvegarde = True
+    else:
+        print("form is not valid") 
 
     return render(request, 'main_app/contact_photo.html', {
         'form' : form,

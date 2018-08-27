@@ -3,6 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
 from main_app import views
+from faq import views_faq
 
 """bilberry URL Configuration
 
@@ -28,6 +29,7 @@ urlpatterns = [
     path('contact_photo', views.contact_photo, name="contact_photo"),
     path('viewer/<id_photo>/<choice_flag>', views.image_viewer, name="viewer"),
     path('list', views.image_list, name="list"),
+    path('faq', views_faq.faq, name="faq")
 ]
 
 if settings.DEBUG is True:
